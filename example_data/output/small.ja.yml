@@ -1,0 +1,27 @@
+---
+en:
+  about:
+    about_mastodon_html: 'The social network of the future: No ads, no corporate surveillance,
+      ethical design, and decentralization! Own your data with Mastodon!'
+    contact_missing: 未設定
+    contact_unavailable: N/A
+    hosted_on: %{domain}でホストされたマストドン
+    title: について
+  accounts:
+    follow: フォローする
+    followers:
+      one: フォローするer
+      other: フォローするers
+    following: フォローするing
+    instance_actor_flash: This account is a virtual actor used to represent the server
+      itself and not any individual user. It is used for federation purposes and should
+      not be suspended.
+    last_active: 最終アクティブ
+    link_verified_on: このリンクの所有者は%{date}に確認されました
+    nothing_here: ここには何もありません！
+    pin_errors:
+      following: あなたが推薦したい人物をフォローしている必要があります
+    posts:
+      one: 投稿する
+      other: 投稿するs
+    posts_tab_heading: 投稿するs

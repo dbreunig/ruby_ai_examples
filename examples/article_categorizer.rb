@@ -1,7 +1,7 @@
 # Article Categorizer
 #
 # This script uses the OpenAI API to categorize a given article.
-# Provide this script with a URL and it will down the HTML.
+# Provide this script with a URL and it will download the HTML.
 # It then ask the OpenAI LLM to extrac the article body and  assign it a set number of
 # topical categories, which can be then used to group texts and help users navigate
 # content.
@@ -12,12 +12,13 @@
 require "dotenv/load"
 require "openai"
 require "json"
-require "net/http"
+require "open-uri"
+require "nokogiri"
 
-# Prepare the example strings
-target_url = URI.parse("https://www.dbreunig.com/2020/09/21/the-gauntlet-growing-social-networks-face-just-got-harder.html")
-response = Net::HTTP.get_response(target_url)
-target_html = response.body
+# Prepare the input HTML
+target_url = "https://www.dbreunig.com/2016/06/23/the-business-implications-of-machine-learning.html"
+html_doc = Nokogiri::HTML(URI.open(target_url))
+target_text = html_doc.css("body").inner_text.gsub(/\s+/, " ").strip
 number_of_desired_categories = 5
 
 # Set up the OpenAI client, define the prompt, and send the request
@@ -27,7 +28,7 @@ response = client.chat(
     model: "gpt-3.5-turbo",
     messages: [
       # {role: "system", content: "You are a helpful API that a."},
-      {role: "user", content: "Given the following HTML, extract the article text. Analyze the article text and provide #{number_of_desired_categories} concise topics to help a user understand the subject being discussed. Return these categories as individual strings contained within an JSON array:\n#{target_html}"}
+      {role: "user", content: "Analyze the following article text and provide #{number_of_desired_categories} 1 to 3 word topics to help a user understand the subject being discussed. Return these categories as individual strings contained within an JSON array:\n#{target_text}"}
     ],
     temperature: 0.7
   }

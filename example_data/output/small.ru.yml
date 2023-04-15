@@ -1,0 +1,27 @@
+---
+en:
+  about:
+    about_mastodon_html: 'The social network of the future: No ads, no corporate surveillance,
+      ethical design, and decentralization! Own your data with Mastodon!'
+    contact_missing: Не установлено
+    contact_unavailable: N/A
+    hosted_on: Mastodon размещен на %{domain}
+    title: О
+  accounts:
+    follow: Следовать
+    followers:
+      one: Следоватьer
+      other: Следоватьers
+    following: Следоватьing
+    instance_actor_flash: This account is a virtual actor used to represent the server
+      itself and not any individual user. It is used for federation purposes and should
+      not be suspended.
+    last_active: последнее действие
+    link_verified_on: Собственность на эту ссылку была проверена %{date}
+    nothing_here: Здесь ничего нет!
+    pin_errors:
+      following: Вы должны уже следовать за человеком, которого вы хотите порекомендовать
+    posts:
+      one: Опубликовать
+      other: Опубликоватьs
+    posts_tab_heading: Опубликоватьs

@@ -20,7 +20,14 @@ Occasionally scripts will have dependencies not mentioned here. Check their `req
 
 ## Examples
 
+- **Article Categorizer:** Provide a URL and the script will roughly extract the body text then send it to OpenAI to analyze and provide a specified number of categories given the topics contained within the article.
+- **Auto Localizer:** This script takes in a `yml` string file, in English, and generates translated `yml` files in whatever languages you specify.
 - **Faker GPT:** Similar to the [faker](https://github.com/faker-ruby/faker) gem, but generates seed data that is similar to input expamples you provide.
-- **Article Categorizer:** Provide a URL and OpenAI's LLM will extract the body text, analyze it, and provide a specified number of categories given the topics contained within the article.
+- **Pull Quote Extractor:** Provide a URL and the script will roughly extract the body text then send it to OpenAI to analyze and provide a specified number of compelling and representative pull quotes contained within the article.
+
+## Known Issues
+
+- Often, the text contained in given URLs will exceed the token limits for the endpoint. Try another link, truncate the article, or chunk up the the text and make multiple requests.
+- The `auto_localizer.rb` doesn't deal well with long strings that are quoted and given new lines by the Ruby `YAML.to_yaml` function. I got lazy and didn't write a proper *dictionary* translator. Instead I dumped the dictionary into a YAML string, then did find and replace using the translation dictionary. If you want to write a proper function which copies a Ruby dictionary and translates all strings, submit a PR! Otherwise, I may get to it someday.
 
 Let me know if you have any ideas. Or, feel free to add your own and submit a pull request.
