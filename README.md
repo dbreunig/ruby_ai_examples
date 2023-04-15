@@ -21,9 +21,10 @@ Occasionally scripts will have dependencies not mentioned here. Check their `req
 ## Examples
 
 - **Article Categorizer:** Provide a URL and the script will roughly extract the body text then send it to OpenAI to analyze and provide a specified number of categories given the topics contained within the article.
-- **Auto Localizer:** This script takes in a `yml` string file, in English, and generates translated `yml` files in whatever languages you specify.
+- **Auto Localizer:** This script takes in a `yml` string file, in English, and generates translated `yml` files in whatever languages you specify. (Examples are in the 'example_data' folder.)
 - **Faker GPT:** Similar to the [faker](https://github.com/faker-ruby/faker) gem, but generates seed data that is similar to input expamples you provide.
 - **Pull Quote Extractor:** Provide a URL and the script will roughly extract the body text then send it to OpenAI to analyze and provide a specified number of compelling and representative pull quotes contained within the article.
+- **RSS to Bio:** Provide an RSS URL and the script will download the posts and prepare them. It will then provide summaries and titles for each author in the feed and ask OpenAI to write a short biography on their writing.
 
 ## Known Issues
 
