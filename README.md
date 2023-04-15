@@ -16,6 +16,11 @@ OPENAI_API_KEY=[your key here]
 
 Except with your key after the `=`. Get a key [here](https://platform.openai.com/account/api-keys).
 
+Occasionally scripts will have dependencies not mentioned here. Check their `require` statements and `gem install` as necessary.
+
 ## Examples
 
 - **Faker GPT:** Similar to the [faker](https://github.com/faker-ruby/faker) gem, but generates seed data that is similar to input expamples you provide.
+- **Article Categorizer:** Provide a URL and OpenAI's LLM will extract the body text, analyze it, and provide a specified number of categories given the topics contained within the article.
+
+Let me know if you have any ideas. Or, feel free to add your own and submit a pull request.
