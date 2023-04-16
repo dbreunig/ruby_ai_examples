@@ -31,5 +31,6 @@ Occasionally scripts will have dependencies not mentioned here. Check their `req
 
 - Often, the text contained in given URLs will exceed the token limits for the endpoint. Try another link, truncate the article, or chunk up the the text and make multiple requests.
 - The `auto_localizer.rb` doesn't deal well with long strings that are quoted and given new lines by the Ruby `YAML.to_yaml` function. I got lazy and didn't write a proper *dictionary* translator. Instead I dumped the dictionary into a YAML string, then did find and replace using the translation dictionary. If you want to write a proper function which copies a Ruby dictionary and translates all strings, submit a PR! Otherwise, I may get to it someday.
+- If you actually use these, you'd be wise to 'clean' the responses returned. Sometimes GPT will return fluff or needless punctuation around a response. For example, it often returned translations as JSON wrapped in a Markdown context, which was hacked away with: `response_string.slice(response_string.index("{")..response_string.rindex("}"))`. But this is a hack. If you're putting stuff in production, be smarter than me.
 
 Let me know if you have any ideas. Or, feel free to add your own and submit a pull request.
