@@ -11,8 +11,6 @@
 require "dotenv/load"
 require "openai"
 require "json"
-require "open-uri"
-require "nokogiri"
 
 def list_violations(text)
   # Set up the OpenAI client, define the prompt, and send the request
@@ -62,4 +60,3 @@ when "false"
 else
   puts "Have a human approve or deny"
 end
-
